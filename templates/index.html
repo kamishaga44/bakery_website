@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery — кондитерская</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bakery</h1>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#products">Наши десерты</a>
+            <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Сладкие моменты начинаются здесь</h2>
+            <p>Торты и десерты ручной работы для ваших особенных моментов.</p>
+            <a href="#products">Посмотреть десерты</a>
+        </section>
+
+        <section id="products">
+            <h2>Наши десерты</h2>
+
+            <article>
+                <h3>Торт «Красный бархат»</h3>
+                <p>Нежные коржи и сливочный крем.</p>
+                <p>Цена: 12 000 ₸</p>
+            </article>
+
+            <article>
+                <h3>Чизкейк</h3>
+                <p>Классический десерт с нежной текстурой.</p>
+                <p>Цена: 8 000 ₸</p>
+            </article>
+
+            <article>
+                <h3>Капкейки</h3>
+                <p>Маленькие десерты для любого праздника.</p>
+                <p>Цена: 2 500 ₸ за штуку</p>
+            </article>
+        </section>
+
+        <section id="about">
+            <h2>О нашей кондитерской</h2>
+            <p>Мы готовим десерты с любовью и уделяем внимание каждой детали.</p>
+        </section>
+
+        <section id="contacts">
+            <h2>Свяжитесь с нами</h2>
+            <p>Оставьте заявку, чтобы обсудить заказ.</p>
+            {% if success %}
+    <p class="success-message">{{ success }}</p>
+{% endif %}
+
+{% if error %}
+    <p class="error-message">{{ error }}</p>
+{% endif %}
+
+
+<form action="{{ url_for('create_order') }}" method="POST">
+    <label for="name">Ваше имя</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Номер телефона</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="message">Ваш заказ</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Оставить заявку</button>
+</form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Bakery. Все права защищены.</p>
+    </footer>
+</body>
+</html>
