@@ -4,83 +4,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bakery — торты и десерты ручной работы в Астане.">
     <title>Bakery — кондитерская</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Bakery</h1>
+
+    <header class="site-header">
+        <a class="logo" href="#home">Bakery<span>.</span></a>
+
         <nav>
             <a href="#home">Главная</a>
             <a href="#products">Наши десерты</a>
             <a href="#about">О нас</a>
             <a href="#contacts">Контакты</a>
         </nav>
+
+        <a class="header-button" href="#contacts">Заказать десерт</a>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Сладкие моменты начинаются здесь</h2>
-            <p>Торты и десерты ручной работы для ваших особенных моментов.</p>
-            <a href="#products">Посмотреть десерты</a>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">С любовью из нашей пекарни</p>
+
+                <h1>Сладкие моменты начинаются здесь</h1>
+
+                <p class="hero-description">
+                    Торты и десерты ручной работы для ваших
+                    особенных моментов. Свежие ингредиенты,
+                    нежный вкус и внимание к каждой детали.
+                </p>
+
+                <a class="primary-button" href="#products">
+                    Выбрать десерт
+                </a>
+
+                <p class="hero-note">Маленькие радости каждый день ♡</p>
+            </div>
         </section>
 
-        <section id="products">
-            <h2>Наши десерты</h2>
+        <section id="products" class="products-section">
+            <div class="section-heading">
+                <p class="eyebrow">Наше меню</p>
+                <h2>Десерты, которые хочется разделить</h2>
+                <p>Выбирай любимое и оставляй заявку на заказ.</p>
+            </div>
 
-            <article>
-                <h3>Торт «Красный бархат»</h3>
-                <p>Нежные коржи и сливочный крем.</p>
-                <p>Цена: 12 000 ₸</p>
-            </article>
+            <div class="product-grid">
 
-            <article>
-                <h3>Чизкейк</h3>
-                <p>Классический десерт с нежной текстурой.</p>
-                <p>Цена: 8 000 ₸</p>
-            </article>
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1688153009623-0d9a3ba1b105?w=800&auto=format&fit=crop&q=80"
+                        alt="Торт красный бархат"
+                        loading="lazy"
+                    >
 
-            <article>
-                <h3>Капкейки</h3>
-                <p>Маленькие десерты для любого праздника.</p>
-                <p>Цена: 2 500 ₸ за штуку</p>
-            </article>
+                    <div class="product-info">
+                        <p class="product-category">Торты</p>
+                        <h3>«Красный бархат»</h3>
+                        <p>Нежные коржи и сливочный крем с мягким вкусом.</p>
+
+                        <div class="product-bottom">
+                            <span class="price">12 000 ₸</span>
+                            <a class="order-link" href="#contacts"
+                               data-product="Торт Красный бархат">
+                                Заказать ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=800&auto=format&fit=crop&q=80"
+                        alt="Чизкейк"
+                        loading="lazy"
+                    >
+
+                    <div class="product-info">
+                        <p class="product-category">Десерты</p>
+                        <h3>Классический чизкейк</h3>
+                        <p>Нежная кремовая текстура и рассыпчатая основа.</p>
+
+                        <div class="product-bottom">
+                            <span class="price">8 000 ₸</span>
+                            <a class="order-link" href="#contacts"
+                               data-product="Чизкейк">
+                                Заказать ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=800&auto=format&fit=crop&q=80"
+                        alt="Капкейки с кремом"
+                        loading="lazy"
+                    >
+
+                    <div class="product-info">
+                        <p class="product-category">Маленькие радости</p>
+                        <h3>Капкейки</h3>
+                        <p>Небольшие пирожные с нежным кремом для любого повода.</p>
+
+                        <div class="product-bottom">
+                            <span class="price">2 500 ₸ / шт.</span>
+                            <a class="order-link" href="#contacts"
+                               data-product="Капкейки">
+                                Заказать ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </section>
 
-        <section id="about">
-            <h2>О нашей кондитерской</h2>
-            <p>Мы готовим десерты с любовью и уделяем внимание каждой детали.</p>
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <p class="eyebrow">Наша философия</p>
+                <h2>Создаем десерты с душой</h2>
+
+                <p>
+                    Для нас выпечка — это не просто сладости.
+                    Это повод собраться вместе, порадовать близких
+                    и сделать обычный день немного особенным.
+                </p>
+
+                <a class="text-link" href="#contacts">
+                    Расскажите нам о своем празднике ↗
+                </a>
+            </div>
+
+            <div class="about-decoration">
+                <span>Made with</span>
+                <strong>love & butter</strong>
+                <span>♡ Bakery</span>
+            </div>
         </section>
 
-        <section id="contacts">
-            <h2>Свяжитесь с нами</h2>
-            <p>Оставьте заявку, чтобы обсудить заказ.</p>
+        <section id="contacts" class="contact-section">
+            <div class="section-heading">
+                <p class="eyebrow">Будем рады вашему заказу</p>
+                <h2>Давайте обсудим ваш десерт</h2>
+                <p>Заполни форму, и твоя заявка будет отправлена нам.</p>
+            </div>
+
             {% if success %}
-    <p class="success-message">{{ success }}</p>
-{% endif %}
+                <p class="success-message">{{ success }}</p>
+            {% endif %}
 
-{% if error %}
-    <p class="error-message">{{ error }}</p>
-{% endif %}
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+
+            <form action="{{ url_for('create_order') }}"
+                  method="POST"
+                  class="contact-form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                <label for="name">Ваше имя</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Как к вам обращаться?"
+                    required
+                >
+
+                <label for="phone">Номер телефона</label>
+
+<input
+    type="tel"
+    id="phone"
+    name="phone"
+    inputmode="tel"
+    autocomplete="tel"
+    maxlength="12"
+    pattern="(\+7|7|8)[0-9]{10}"
+    oninput="this.value = (this.value.startsWith('+') ? '+' + this.value.slice(1).replace(/\D/g, '') : this.value.replace(/\D/g, '')).slice(0, 12)"
+    title="Введите номер Казахстана: +77012345678, 77012345678 или 87012345678"
+    placeholder="+77012345678"
+    required
+>
 
 
-<form action="{{ url_for('create_order') }}" method="POST">
-    <label for="name">Ваше имя</label>
-    <input type="text" id="name" name="name" required>
+                <label for="message">Какой десерт хотите заказать?</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Например, чизкейк на день рождения..."
+                    required
+                ></textarea>
 
-    <label for="phone">Номер телефона</label>
-    <input type="tel" id="phone" name="phone" required>
-
-    <label for="message">Ваш заказ</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">Оставить заявку</button>
-</form>
+                <button class="primary-button" type="submit">
+                    Отправить заявку
+                </button>
+            </form>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
+        <a class="logo" href="#home">Bakery<span>.</span></a>
+        <p>Сделано с любовью к сладкому ♡</p>
         <p>© 2026 Bakery. Все права защищены.</p>
     </footer>
+
+    <script>
+        const productLinks = document.querySelectorAll("[data-product]");
+        const messageField = document.getElementById("message");
+
+        productLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                messageField.value =
+                    "Хочу заказать: " + link.dataset.product;
+            });
+        });
+    </script>
+
 </body>
 </html>
